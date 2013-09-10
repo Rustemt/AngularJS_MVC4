@@ -4,15 +4,23 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Public/bootstrap/css/bootstrap.css")
 </head>
-<body>
-    @RenderBody()
+    <body class="container" data-ng-app>
+        <img src="https://www.seoclerks.com/pics/103822-1.png" style="height: 140px;float:right" alt="MVC4"/>
+        <img src="http://www.airpair.com/images/tech/angularjs.jpeg" style="height: 100px;float:right" alt="AngularJS"/>  
+        <h2>AngularJS + MVC4 Demo Apps</h2>
+        
+        @if (ViewContext.RouteData.Values["controller"].ToString() != "Home"
+             || ViewContext.RouteData.Values["action"].ToString() != "Index")
+        {
+            <p><a href="/">&lt;&lt; Back</a></p>
+        }
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/Scripts/angular.min.js")
-    @Scripts.Render("~/Scripts/my.js")
-    @RenderSection("scripts", required: false)
-</body>
+        @RenderBody()
+
+        @Scripts.Render("~/Public/jquery/jquery.min.js")
+        @Scripts.Render("~/Public/angularjs/angular.min.js")
+        @RenderSection("scripts", required: false)
+    </body>
 </html>

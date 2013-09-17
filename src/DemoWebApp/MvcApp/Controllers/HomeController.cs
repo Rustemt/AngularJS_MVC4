@@ -25,5 +25,10 @@ namespace MvcApp.Controllers
         {
             return View();
         }
+
+        public ActionResult FormsAndAngularJs()
+        {
+            return View();
+        }
     }
 }
